@@ -10,8 +10,8 @@ def main():
             print("| BEM VINDO AO SOFTWARE DO BANCO |")
             print("+------------------------------+")
             print("[1] Criar Conta")
-            print("[2] Sacar")
-            print("[3] Depositar")
+            print("[2] Depositar")
+            print("[3] Sacar")
             print("[4] Transferir")
             print("[5] Consultar saldo")
             print("[6] Sair")
@@ -26,12 +26,12 @@ def main():
                     print("Conta criada com sucesso!")
 
                 case 2:
-                    print("Você está prestes a realizar um saque.")
-                    sacar(banco)
-
-                case 3:
                     print("Você está prestes a realizar um depósito.")
                     deposito(banco)
+
+                case 3:
+                    print("Você está prestes a realizar um saque.")
+                    sacar(banco)
 
                 case 4:
                     print("Você está prestes a realizar uma transferência")
@@ -42,6 +42,7 @@ def main():
                     consultar_saldo(banco)
 
                 case 6:
+                    print("Saindo...")
                     break
                     
                 case _:
@@ -60,9 +61,7 @@ def criar_cliente():
         else:
             print("Valor inválido")
 
-    saldo_inicial = input("Digite o saldo inicial do cliente: ")
-
-    cliente = Cliente(nome, saldo_inicial)
+    cliente = Cliente(nome)
     return cliente
 
 def sacar(banco):
@@ -87,7 +86,7 @@ def deposito(banco):
 def transferencia(banco):
     nome_cliente = input("Digite o nome do cliente: ")
     nome_destino = input("Digite o nome do Destinatário: ")
-    valor_envio = float(input("Digite o valor a depositar: "))
+    valor_envio = float(input("Digite o valor a transferir: "))
 
     cliente_encontrado = banco.buscar_cliente(nome_cliente)
     if cliente_encontrado:

@@ -1,21 +1,13 @@
 class Cliente:
-    def __init__(self, nome, saldo_inicial, saldo=0):
+    def __init__(self, nome, saldo=0):
         self.nome = nome
-        self.saldo_inicial = saldo_inicial
         self.saldo = saldo
-        self.saldo = self.saldo_inicial
 
     def getCliente(self):
         return self.nome, self.saldo_inicial
 
     def setNome(self, x):
         self.nome = x
-
-    def setSaldo_Inicial(self, x):
-        self.saldo_inicial = x
-
-    def setSaldo(self, x):
-        self.saldo = x
 
 class Banco():
 
