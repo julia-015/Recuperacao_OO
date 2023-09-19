@@ -1,18 +1,36 @@
-class Banco:
+class Cliente:
+    def __init__(self, nome, saldo_inicial):
+        self.nome = nome
+        self.saldo_inicial = saldo_inicial
+
+    def getCliente(self):
+        return self.nome, self.saldo_inicial
+
+    def setNome(self, x):
+        self.nome = x
+
+    def setSaldo_Inicial(self, x):
+        self.saldo_inicial = x
+
+class Banco():
+
     def __init__(self):
+        self._clientes = {}
+
+    def criar_conta(self, cliente):
+        self._clientes[cliente.nome] = cliente
+        print(f"{cliente.nome} foi adicionado")
+
+class Transferencia():
+
+    def sacar(self, conta, valor):
         pass
 
-    def criar_conta(nome, saldo_inicial):
+    def depositar(self, conta, valor):
         pass
 
-    def sacar(conta, valor):
-        pass
-
-    def depositar(conta, valor):
-        pass
-
-    def transferir(origem, destino, valor):
+    def transferir(self, origem, destino, valor):
         pass
     
-    def saldo(conta):
+    def saldo(self, conta):
         pass
